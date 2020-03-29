@@ -6,7 +6,6 @@ import com.kazale.pontointeligente.api.pontointeligenteapi.repositories.Funciona
 import com.kazale.pontointeligente.api.pontointeligenteapi.services.FuncionarioService
 import com.kazale.pontointeligente.api.pontointeligenteapi.utils.SenhaUtils
 import org.junit.jupiter.api.Assertions
-import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.mockito.BDDMockito
@@ -18,7 +17,6 @@ import org.springframework.boot.test.mock.mockito.MockBean
 import org.springframework.test.context.ActiveProfiles
 import java.util.*
 
-//TODO @RunWith(SpringRunner::class)
 @SpringBootTest
 @ActiveProfiles("test")
 @AutoConfigureDataMongo
@@ -34,13 +32,11 @@ class FuncionarioServiceTest {
     private val cpf: String = "34234855948"
     private val id: String = "1"
 
-    //TODO @Before
     @BeforeEach
     @Throws(Exception::class)
     fun setUp() {
         BDDMockito.given(funcionarioRepository?.save(Mockito.any(Funcionario::class.java)))
                 .willReturn(funcionario())
-        //TODO BDDMockito.given(funcionarioRepository?.findOne(id)).willReturn(funcionario())
         BDDMockito.given(funcionarioRepository?.findById(id)).willReturn(Optional.of(funcionario()))
         BDDMockito.given(funcionarioRepository?.findByEmail(email)).willReturn(funcionario())
         BDDMockito.given(funcionarioRepository?.findByCpf(cpf)).willReturn(funcionario())

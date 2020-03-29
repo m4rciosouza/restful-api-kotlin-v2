@@ -21,7 +21,6 @@ import org.springframework.data.domain.PageRequest
 import org.springframework.test.context.ActiveProfiles
 import java.util.*
 
-//TODO @RunWith(SpringRunner::class)
 @SpringBootTest
 @ActiveProfiles("test")
 @AutoConfigureDataMongo

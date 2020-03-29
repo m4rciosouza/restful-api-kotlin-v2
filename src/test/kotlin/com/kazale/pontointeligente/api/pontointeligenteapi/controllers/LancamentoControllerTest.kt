@@ -28,7 +28,6 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
 import java.text.SimpleDateFormat
 import java.util.*
 
-//TODO @RunWith(SpringRunner::class)
 @SpringBootTest
 @AutoConfigureMockMvc
 @ActiveProfiles("test")
